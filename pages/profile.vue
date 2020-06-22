@@ -36,7 +36,7 @@ export default Vue.extend({
   async asyncData ({ $axios, error }: Context) {
     const { code, data } = await $axios.$get('/api/profile');
     if (code === 1) {
-      const profile = data.profile;
+      const profile = (data && data.profile) || {};
       const md = new MarkdownIt({
         html: true,
         // breaks: true,

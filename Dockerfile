@@ -4,7 +4,7 @@ COPY . /app
 WORKDIR /app
 
 RUN yarn config set registry https://registry.npm.taobao.org
-RUN yarn install
+RUN yarn
 RUN yarn  build
 
 EXPOSE 9000
